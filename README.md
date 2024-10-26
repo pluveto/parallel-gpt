@@ -73,8 +73,6 @@ ENDPOINT=https://.../v1/chat/completions
     
 - **Templates**: Similarly, define your templates in template.txt. For instance:
     
-    plaintext复制
-    
     ```plaintext
     Write a short story about {prompt}.
     ```
