@@ -1,4 +1,5 @@
 import re
+import sys
 
 def remove_chapter_numbers(text):
     pattern = r'^(#+\s*)(\d+(\.\d+)*\s*)+'
@@ -7,7 +8,13 @@ def remove_chapter_numbers(text):
     
     return modified_text
 
-text = open("combined_output.txt", "r", encoding="utf-8").read()
+DEFAULT_FILENAME = "combined_output.txt"
 
-cleaned_text = remove_chapter_numbers(text)
-print(cleaned_text)
+if __name__ == "__main__":
+    if sys.argv[1:]:
+        DEFAULT_FILENAME = sys.argv[1]
+
+    text = open(DEFAULT_FILENAME, "r", encoding="utf-8").read()
+
+    cleaned_text = remove_chapter_numbers(text)
+    print(cleaned_text)
