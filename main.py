@@ -32,7 +32,9 @@ def process_file(file_processor_fn, input_file):
             return
 
         output_content = file_processor_fn(input_file=input_file)
-        
+        if not output_content:
+            raise Exception("No output content")
+
         with open(output_file, 'w') as f:
             f.write(output_content)
         print(f"Processed {input_file} -> {output_file}")
