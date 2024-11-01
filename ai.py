@@ -35,7 +35,8 @@ def query(prompt, user_message, model=MODEL_O1_MINI, json_mode=True):
     # Step 2: Prepare the API request payload
     payload = {
         "model": model,
-        "max_tokens": 12800,
+        # "max_tokens": 12800,
+        "max_completion_tokens": 12800,
         "messages": [
             # {
             #     "role": "system",
